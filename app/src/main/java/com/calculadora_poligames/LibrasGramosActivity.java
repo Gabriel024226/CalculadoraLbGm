@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class VolumenEsferaActivity extends AppCompatActivity {
+public class LibrasGramosActivity extends AppCompatActivity {
 
     private EditText editTextX;
     private EditText editTextTotal;
@@ -16,7 +16,7 @@ public class VolumenEsferaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_volumen_esfera);
+        setContentView(R.layout.activity_libras_gramos);
         editTextX = findViewById(R.id.editTextNumberX );
         editTextTotal = findViewById(R.id.editTextNumberTotal );
         editTextX.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -32,10 +32,10 @@ public class VolumenEsferaActivity extends AppCompatActivity {
 
     @SuppressLint("DefaultLocale")
     private void realizaOperacion() {
-        float radio = Float.parseFloat(editTextX.getText().toString());
-        float total = (float) (((4) * (Math.pow(radio, 3)) * (Math.PI))/3);
-        String resultado= Float.toString(total);
+        float libras = Float.parseFloat(editTextX.getText().toString());
+        float gramos = (float) ((453.592)*(libras));
+        String resultado = Float.toString(gramos);
         editTextTotal.setText(resultado, TextView.BufferType.SPANNABLE );
-        editTextTotal.setEnabled( false );
+        editTextTotal.setEnabled(false);
     }
 }

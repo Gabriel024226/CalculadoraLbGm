@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonSuma,buttonResta,buttonMultiplica,buttonDivide,buttonVolumen, buttonAreaT;
+    private Button buttonSuma,buttonResta,buttonMultiplica,buttonDivide,buttonLbGm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,20 +42,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) { abrirDivision(); }
         });
-        buttonVolumen = findViewById(R.id.buttonVolumen);
-        buttonVolumen.setOnClickListener(new View.OnClickListener() {
+        buttonLbGm = findViewById(R.id.buttonLbGm);
+        buttonLbGm.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { abrirVolumen(); }
+            public void onClick(View v) { abrirLbGm(); }
         });
-
-        buttonAreaT = findViewById(R.id.buttonAreaT );
-        buttonAreaT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                abrirAreaT();
-            }
-        });
-
 
     }
 
@@ -81,15 +72,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DivisionActivity.class);
         startActivity( intent );
     }
-    private void abrirVolumen(){
-        Intent intent = new Intent(this, VolumenEsferaActivity.class);
+    private void abrirLbGm(){
+        Intent intent = new Intent(this, LibrasGramosActivity.class);
         startActivity( intent );
     }
-
-    private void abrirAreaT() {
-        Intent intent = new Intent( this , AreaTActivity.class );
-        startActivity( intent );
-    }
-
 
 }
